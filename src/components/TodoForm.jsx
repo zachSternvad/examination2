@@ -17,6 +17,7 @@ export default function TodoForm({ onAddTodo }) {
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Lägg till en task..." value={text} onChange={(e) => setText(e.target.value)} />
+            <button type="submit">Lägg till</button>
         </form>
     );
 }
