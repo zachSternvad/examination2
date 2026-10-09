@@ -46,7 +46,7 @@ function App() {
 
   return (
     <main className="app-container">
-      <h1>Min ADHD lista</h1>
+      <h1>Min Medeltida Lista</h1>
       <p>Antal tasks: {todos.length}</p>
 
       {/* Form hanterar sin egen input och gör ett call till handleAddTodo */}

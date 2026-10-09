@@ -1,17 +1,47 @@
-# React + Vite
+## En ToDo-applikation i medeltida pergamentstil byggd med React och Vite.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 1. Frågor om koden
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### State-hantering
+Appen håller koll på alla uppgifter i ett state (`todos`) i `App.jsx` med hjälp av `useState`. Varje uppgift sparas som ett objekt med `id`, `text` och `completed`. När vi anropar `setTodos` känner React av att datan har ändrats och ritar om komponenten så att skärmen uppdateras direkt utan att sidan laddas om.
 
-## React Compiler
+### Oföränderlighet (Immutability)
+Man får inte ändra en array direkt med `.push()` eftersom React jämför minnesreferenser för att veta när sidan ska ritas om. Om man ändrar i samma array upptäcker React inte ändringen och gränssnittet blir inaktuellt. Istället skapar vi alltid en ny array med spread-operatorn (`[...todos, newTodo]`), `.map()` eller `.filter()`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2. Kodgranskning (Koddetektiven)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# examination2
+**Koden som granskas:**
+```javascript
+function addTodo(todos, text) {
+  todos.push(text);
+  return todos;
+}
+
+Feedback:
+Koden försöker att lägga till en ny uppgift i listan med .push(), men problemet är att den ändrar direkt i det befintliga statet och bara sparar en textsträng, vilket gör att React inte upptäcker ändringen och inte ritar om gränssnittet. Ett bättre sätt är att skapa ett nytt objekt med id, text och completed, och returnera en helt ny array med spread-operatorn ([...todos, newTodo]).
+
+Korrekt omskrivning för React:
+JavaScript
+
+function addTodo(todos, text) {
+  // Skapa ett nytt objekt med id, text och status
+  const newTodo = {
+    id: Date.now(),
+    text: text,
+    completed: false
+  };
+
+  // Returnera en ny array med spread-operatorn
+  return [...todos, newTodo];
+}
+
+3. Problemlösning & Reflektion
+
+När jag ville stoppa användare från att lägga till tomma uppgifter sökte jag i MDN och React-dokumentationen om strängmetoden .trim(). Jag lade till ett villkor if (!text.trim()) return; i mitt formulär. Det tar bort tomma mellanslag och avbryter funktionen om inputfältet är tomt. Det var ett enkelt sätt att validera indata så att appen inte sparar tomma rader.
+
+
+---
