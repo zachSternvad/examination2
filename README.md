@@ -1,6 +1,4 @@
-## En ToDo-applikation i medeltida pergamentstil byggd med React och Vite.
-
----
+## En ToDo-applikation i medeltida parchment stil byggd med React och Vite.
 
 ## 1. Frågor om koden
 
