@@ -26,12 +26,12 @@ function App() {
 
   // Ändra status på en uppgift klar/inte klar
   function handleToggleTodo(id) {
-    const uppdaterade = todos.map(function (todo)) {
+    const uppdaterade = todos.map(function (todo) {
       if (todo.id === id) {
-      return { ...todo, completed: !todo.completed };
-    }
-    return todo;
-  });
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
 
-}
+  }
 }
