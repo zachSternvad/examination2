@@ -1,3 +1,6 @@
+/* Importerar coolare fonts */
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=UnifrakturMaguntia&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,38 +8,69 @@
 }
 
 body {
-  font-family: "old london", Georgia, "Times New Roman", Times, serif;
+  font-family: "MedievalSharp", "UnifrakturMaguntia", "Georgia", serif;
   background-color: #2a3b2d;
   color: #2a3b2d;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 60px 20px;
 }
 
 .app-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   background-color: #f0e3c7;
-  padding: 30px;
-  border-radius: 12px;
-  border: 3px solid #3b5b29;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  padding: 40px 30px;
+  border-left: 4px solid #3b5b29;
+  border-right: 4px solid #3b5b29;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
+/* papersrulle dekoration */
+.app-container::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: -15px;
+  right: -15px;
+  height: 28px;
+  background: linear-gradient(to bottom, #d2c099, #f0e3c7 40%, #a88d58);
+  border: 2px solid #3b5b29;
+  border-radius: 14px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.app-container::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: -15px;
+  right: -15px;
+  height: 28px;
+  background: linear-gradient(to bottom, #a88d58, #f0e3c7 60%, #d2c099);
+  border: 2px solid #3b5b29;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Medeltida rubrik */
 h1 {
+  font-family: "UnifrakturMaguntia", "MedievalSharp", cursive;
   text-align: center;
   color: #3b5b29;
-  margin-bottom: 6px;
-  font-size: 1.8rem;
+  margin-bottom: 4px;
+  font-size: 2.6rem;
+  letter-spacing: 1px;
 }
 
 .app-container>p {
   text-align: center;
   color: #6a9a8a;
   font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
 }
 
 /* Inmatnings Form */
