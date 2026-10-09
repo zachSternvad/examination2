@@ -1,6 +1,7 @@
 ## En ToDo-applikation i medeltida parchment stil byggd med React och Vite.
 
-# Inspelningslänk: https://funet-my.sharepoint.com/:v:/g/personal/3ggyhmu26_sterza_folkuniversitetet_nu/IQAm7fWE6C-MQ5faUfX0jOjPAXlHhUiV-EcOftC-dpWgt6s?e=3IM5HI&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbE1vZGUiOiJtaXMiLCJyZWZlcnJhbFZpZXciOiJwb3N0cm9sbC1jb3B5bGluayIsInJlZmVycmFsUGxheWJhY2tTZXNzaW9uSWQiOiJiNWRkYjQzOC0yODdmLTQ0ZDMtYWIwNi1kY2RiMzM2NmI5Y2IifX0%3D
+## Inspelningslänk: 
+https://funet-my.sharepoint.com/:v:/g/personal/3ggyhmu26_sterza_folkuniversitetet_nu/IQAm7fWE6C-MQ5faUfX0jOjPAXlHhUiV-EcOftC-dpWgt6s?e=3IM5HI&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbE1vZGUiOiJtaXMiLCJyZWZlcnJhbFZpZXciOiJwb3N0cm9sbC1jb3B5bGluayIsInJlZmVycmFsUGxheWJhY2tTZXNzaW9uSWQiOiJiNWRkYjQzOC0yODdmLTQ0ZDMtYWIwNi1kY2RiMzM2NmI5Y2IifX0%3D
 
 ## 1. Frågor om koden
 
