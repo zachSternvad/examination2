@@ -26,7 +26,7 @@ Feedback:
 Koden försöker att lägga till en ny uppgift i listan med .push(), men problemet är att den ändrar direkt i det befintliga statet och bara sparar en textsträng, vilket gör att React inte upptäcker ändringen och inte ritar om gränssnittet. Ett bättre sätt är att skapa ett nytt objekt med id, text och completed, och returnera en helt ny array med spread-operatorn ([...todos, newTodo]).
 
 Korrekt omskrivning för React:
-JavaScript
+```JavaScript
 
 function addTodo(todos, text) {
   // Skapa ett nytt objekt med id, text och status
@@ -39,6 +39,7 @@ function addTodo(todos, text) {
   // Returnera en ny array med spread-operatorn
   return [...todos, newTodo];
 }
+```
 
 3. Problemlösning & Reflektion
 
