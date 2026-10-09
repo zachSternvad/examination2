@@ -32,6 +32,39 @@ function App() {
       }
       return todo;
     });
-
+    setTodos(uppdaterade);
   }
+
+  // Ta bort task baserat på ID
+  function handleRemoveTodo(idToRemove) {
+    /* Skapa array istället för att ändra state direkt */
+    const kvar = todos.filter(function (todo) {
+      return todo.id !== idToRemove;
+    });
+    setTodos(kvar);
+  }
+
+  return (
+    <main className="app-container">
+      <h1>Min ADHD lista</h1>
+      <p>Antal tasks: {todos.length}</p>
+
+      {/* Form hanterar sin egen input och gör ett call till handleAddTodo */}
+      <TodoForm onAddTodo={handleAddTodo} />
+
+      <ul>
+        {/* Visa en text om inga uppgifter finns */}
+        {todos.length == 0 ? (
+          <p className="empty-message">Inga tasks kvar!!</p>) : (
+          todos.map(function (todo) {
+            return (
+              <TodoItem key={todo.id} todo={todo} onToggleTodo={handleToggleTodo} onDeleteTodo={handleRemoveTodo} />
+            );
+          })
+        )}
+      </ul>
+    </main>
+  );
 }
+
+export default App;
